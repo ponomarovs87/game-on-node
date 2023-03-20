@@ -2,8 +2,8 @@ class AbstractPerson {
     constructor(name, hp, lvl) {
         this.name = name;
         this.hp = hp;
-        this.lvl = lvl;
-        this.power = 2;
+        this.lv = lvl;
+        this.power = 2 * lvl;
     };
 
     isAlive(){
@@ -11,11 +11,11 @@ class AbstractPerson {
     };
 
     chooseAttackPart(bodyPart){
-        this.attackPoint = bodyPart
+        this.attackPoint = bodyPart;
     };
 
     chooseDefence(bodyPart){
-        this.defencePart = bodyPart
+        this.defencePart = bodyPart;
     };
 };
 
