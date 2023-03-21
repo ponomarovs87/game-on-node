@@ -11,53 +11,15 @@ class AbstractPerson {
     addExp(initialHP, lvl) {
         this.exp += initialHP * lvl;
 
-        if (this.lv < 2 && this.exp >= 20) {
-            this.setLvl(2)
-            
+        if (this.exp >= this.needExp) {
+            let lvl = this.lv + 1 ;
+            let needExp = this.needExp * 2;
+            console.log(lvl);
+            console.log(needExp);
+            this.setLvl(lvl, needExp)
+
         };
-        if (this.lv < 3 && this.exp >= 20) {
-            this.setLvl(3)
-            
-        };
-        if (this.lv < 4 && this.exp >= 20) {
-            this.setLvl(4)
-            
-        };
-        if (this.lv < 5 && this.exp >= 20) {
-            this.setLvl(5)
-            
-        };
-        if (this.lv < 6 && this.exp >= 50) {
-            this.setLvl(6)
-            
-        };
-        if (this.lv < 7 && this.exp >= 100) {
-            this.setLvl(7)
-            
-        };
-        if (this.lv < 8 && this.exp >= 250) {
-            this.setLvl(8)
-            
-        };
-        if (this.lv < 9 && this.exp >= 500) {
-            this.setLvl(9)
-            
-        };
-        if (this.lv < 10 && this.exp >= 1000) {
-            this.setLvl(10)
-            
-        };
-        if (this.lv < 11 && this.exp >= 1500) {
-            this.setLvl(11)
-            
-        };
-        // if(lvl < 2 && this.exp >= this.needEXp){
-        //     for (let i = 2; i < lvl && this.exp >= this.needEXp; i++) {
-            
-        //     }
-        //     this.setLvl(2)
-        // }
-    }
+    };
 
     isAlive() {
         return this.hp > 0;
@@ -71,10 +33,12 @@ class AbstractPerson {
         this.defencePart = bodyPart;
     };
 
-    setLvl(lv){
+    setLvl(lv, needExp) {
         this.lv = lv;
         this.hp = 20 * this.lv;
         this.power = 2 * this.lv;
+        this.needExp = needExp;
+        console.log(needExp);
     }
 };
 
