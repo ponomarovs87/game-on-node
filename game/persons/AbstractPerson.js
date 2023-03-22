@@ -5,7 +5,7 @@ class AbstractPerson {
         this.lv = lvl;
         this.power = 2 * lvl;
         this.exp = 0;
-        this.needExp = 20;
+        this.needExp = 10;
     };
 
     addExp(initialHP, lvl) {
@@ -14,8 +14,6 @@ class AbstractPerson {
         if (this.exp >= this.needExp) {
             let lvl = this.lv + 1 ;
             let needExp = this.needExp * 2;
-            console.log(lvl);
-            console.log(needExp);
             this.setLvl(lvl, needExp)
 
         };
@@ -38,7 +36,6 @@ class AbstractPerson {
         this.hp = 20 * this.lv;
         this.power = 2 * this.lv;
         this.needExp = needExp;
-        console.log(needExp);
     }
 };
 

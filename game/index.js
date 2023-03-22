@@ -21,7 +21,7 @@ function main() {
 
     const getHP = () => `You have ${hero.hp} HP and ${hero.power} power.\nMonster ${monster.name} has ${monster.hp} HP and ${monster.power} power.\n`;
 
-    const getNewMonsterName = () => `Your new opponent ${monster.name}, with ${monster.hp} HP.`;
+    const getNewMonsterName = () => `Your new opponent ${monster.name}, with ${monster.hp} HP.\nYor have ${hero.exp} exp need to new level ${hero.needExp} exp`;
 
     console.log(`${name} , welcome to the Fight club!\nYour first monster is: ${monster.name}.\n${getHP()}`);
 
@@ -51,7 +51,7 @@ function main() {
             console.log(getNewMonsterName());
         }
     };
-    console.log(`Yor lost!\nYour name ${hero.name} will be forgoten forever.\n ${count} monsters`);
+    console.log(`Yor lost!\nYour name ${hero.name} will be forgoten forever.\nYour kill  ${count} monsters`);
 };
 
 function getRandomNumber(max) {
