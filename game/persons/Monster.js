@@ -1,6 +1,6 @@
 const AbstractPerson = require("./AbstractPerson");
 
-const MonstersNamesArray = ["Skeleton","Ork","Wolf","Assasin","Ninja","Titan","Dragon"]
+const MonstersNamesArray = ["Skeleton","Orc","Wolf","Assassin","Ninja","Titan","Dragon"]
 
 function getRandomNumber0(max) {
     return Math.floor(Math.random() * max);
@@ -14,7 +14,7 @@ function getRandomNumber(max) {
 class Monster extends AbstractPerson {
     constructor(lvl) {
         let HPmonster = lvl*lvl*5;
-        super(MonstersNamesArray[getRandomNumber0(lvl)],getRandomNumber(HPmonster),getRandomNumber(lvl))
+        super(MonstersNamesArray[getRandomNumber0(MonstersNamesArray.length)],getRandomNumber(HPmonster),getRandomNumber(lvl))
         // switch (lvl) {
         //     case 1:
         //     case 2:
