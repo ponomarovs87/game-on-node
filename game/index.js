@@ -8,8 +8,6 @@ const WELKOME_TEXT = `Welcome to the Fight club! \nRemember! Never Tell about Fi
 
 let count = 0;
 
-localStorage.setItem("WELKOME_TEXT", JSON.stringify(WELKOME_TEXT));
-
 function main() {
     console.log(WELKOME_TEXT);
 
