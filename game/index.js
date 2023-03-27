@@ -25,11 +25,18 @@ function main() {
 
     console.log(`${name} , welcome to the Fight club!\nYour first monster is: ${monster.name}.\n${getHP()}`);
 
-    while (hero.isAlive()) {
-        if(hero.lv >= 11){
+    endGame = () => {
+        if (hero.lv >= 11) {
             console.log(`Viktory!\nYou killed evryone! And know no one will remember you name.\n You kill ${count} monsters, and you had ${hero.lv} level`);
             return;
-        }
+        };
+        if (hero.hp <= 0) {
+            console.log(`Yor lost!\nYour name ${hero.name} will be forgoten forever.\nYour kill  ${count} monsters`);
+            return;
+        };
+    };
+
+    while (hero.isAlive()) {
         console.log("Select defence part:\n1. HEAD\n2. BODY\n3. LEGS");
         const defence = +promt()
         hero.chooseDefence(defence)
@@ -46,12 +53,12 @@ function main() {
         console.log(`${getHP()}`);
         if (!monster.isAlive()) {
             count++;
-            hero.addExp(monster.initialHP,monster.lv);
+            hero.addExp(monster.initialHP, monster.lv);
             monster = new Monster(getRandomNumber(hero.lv));
             console.log(getNewMonsterName());
         }
     };
-    console.log(`Yor lost!\nYour name ${hero.name} will be forgoten forever.\nYour kill  ${count} monsters`);
+    endGame();
 };
 
 function getRandomNumber(max) {
